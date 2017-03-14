@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/graffiti_resource"
+    },
+    "included": {}
+  },
+  "definitions": {
+    "graffiti_resource": {
+      "$ref": "graffiti_resource.schema.json"
+    }
+  }
+}

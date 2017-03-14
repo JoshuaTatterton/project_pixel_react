@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/graffiti_resource"
+      }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^object$"
+        },
+        "record_count": {
+          "type": "number"
+        }
+      },
+      "required": ["total_entries"]
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "string",
+          "pattern": "^/.*/graffiti.json_api"
+        },
+        "last": {
+          "type": "string",
+          "pattern": "^/.*/graffiti.json_api"
+        },
+        "next": {
+          "type": "string",
+          "pattern": "^/.*/graffiti.json_api"
+        },
+        "prev": {
+          "type": "string",
+          "pattern": "^/.*/graffiti.json_api"
+        }
+      },
+      "required": ["first", "last"]
+    }
+  },
+  "required": ["data", "meta", "links"],
+  "definitions": {
+    "graffiti_resource": {
+      "$ref": "graffiti_resource.schema.json"
+    }
+  }
+}

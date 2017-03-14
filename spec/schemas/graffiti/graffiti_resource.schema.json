@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "pattern": "^graffitis$"
+    },
+    "id": {
+      "type": "string"
+    },
+    "attributes":{
+      "title": "Graffiti Schema",
+      "type": "object",
+      "properties": {
+        "drawing": {
+          "description": "The collection of the pixels colours",
+          "type": "Array"
+        }
+      },
+      "required": [
+        "drawing"
+      ],
+      "additionalProperties": true
+    },
+    "relationships": {
+      "title": "Relationships schema",
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "self": {
+          "description": "The graffiti link, unique to each graffiti",
+          "type": "string"
+        }
+      }
+    }
+
+  },
+  "required": ["id", "type", "attributes"],
+  "additionalProperties": false
+}

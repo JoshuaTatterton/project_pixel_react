@@ -6,7 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 require 'spec_helper'
 require 'rspec/rails'
-require 'support/database_cleaner'
+Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
